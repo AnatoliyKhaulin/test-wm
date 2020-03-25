@@ -1,0 +1,8 @@
+mixin form-field(label, type, val)
+	label.form-field
+		input(
+			type=`${type}`
+			value=`${val}`
+		).form-field__input.js-form-field
+		span.form-field__label
+			| !{label}

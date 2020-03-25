@@ -9,3 +9,15 @@
 		@content;
 	}
 }
+
+@mixin media($width, $option: 0) {
+	@if ($option == 0) {
+		@media (max-width: $width) {
+			@content;
+		}
+	} @else if $option == 1 {
+		@media (min-width: $width + 1px) {
+			@content;
+		}
+	}
+}

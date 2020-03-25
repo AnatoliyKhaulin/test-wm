@@ -1,0 +1,10 @@
+mixin custom-select(placeholder, options, current)
+	.custom-select
+		select
+			option
+				| 1988
+			each option in options
+				option 
+					| !{option}
+		.custom-select__label
+			| Год рождения

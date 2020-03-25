@@ -1,7 +1,80 @@
 extends pug/base
 
+prepend vars
+	- title = 'Test wm'
+
 append vars
 	//- ...
+	-
+		var headerNav = [
+			{
+				name: 'Личная информация',
+				url: 'personal'
+			},
+			{
+				name: 'Опыт',
+				url: 'experience'
+			},
+			{
+				name: 'JavaScript',
+				url: 'javascript'
+			},
+			{
+				name: 'О себе',
+				url: 'about'
+			},
+		]
+		//- просто для примера, разумеется массив
+		var years = ['1998','1999','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009']
 
 block content
-	//- ...
+	main.wrapper
+		include pug/components/header
+		section.intro
+			.container
+				h1.intro__title
+					| Анкета
+		form(action="/").main-form
+			.container
+				section.personal#personal
+					.section-title
+						i.sprite-info.section-title__icon
+						h2.section-title__text
+							| Личная информация
+					.personal__wrapper
+						+form-field('ФИО', 'text', 'Хаулин Анатолий Андреевич')
+						+custom-select('Год рождения', years, '1988')
+						+form-field('Место проживания', 'text', 'Россия, г.Подольск')
+						+form-field('Skype', 'text', 'ahaulin')
+						+form-field('E-mail', 'email', 'anatolyhaulin@gmail.com')
+				section.experience#experience
+					.section-title
+						i.sprite-experience.section-title__icon
+						h2.section-title__text
+							| Расскажите о своем опыте
+					.experience__wrapper
+						+checkbox('БЭМ/OOCSS', true)
+						+checkbox('Верстаю семантично', true)
+						+checkbox('Webpack', true)
+						+checkbox('Stylus/LESS/SASS', true)
+						+checkbox('ES2015/ES2016', true)
+						+checkbox('jQuery', true)
+						+checkbox('Работаю с SVG', true)
+						+checkbox('Gulp/GRUNT', true)
+						+checkbox('Ипользую Git', true)
+				section.javascript#javascript
+					.section-title
+						i.sprite-js.section-title__icon
+						h2.section-title__text
+							| Уровень владения JavaScript
+					+range-slider
+				section.about#about
+					.section-title
+						i.sprite-about.section-title__icon
+						h2.section-title__text
+							| Расскажите о себе
+					p.about__description
+						| Напишите несколько предложений, чем привлекла наша вакансия и что вы ожидаете от работы у нас.
+					textarea(name="message" placeholder="Понравилась тем,что...").about__message
+					button(type='button').btn
+						| Готово

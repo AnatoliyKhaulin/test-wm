@@ -1,0 +1,10 @@
+header.main-header
+	.container
+		nav.main-header__nav
+			.main-header__hamburger
+				+hamburger-menu
+			ul.main-header-menu.js-header-nav-list
+				each item in headerNav
+					li.main-header-menu__item
+						a(href=`/#${item.url}`).main-header-menu__link.js-scrollLink
+							| !{item.name}

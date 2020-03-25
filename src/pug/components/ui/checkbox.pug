@@ -1,0 +1,14 @@
+mixin checkbox(label, checked)
+	label.checkbox
+		if checked
+			input(type="checkbox" checked).checkbox__input
+			span.checkbox__icon
+				i(aria-hidden="true").fa.fa-check
+			span.checkbox__label
+				| !{label}
+		else
+			input(type="checkbox").checkbox__input
+			span.checkbox__icon
+				i(aria-hidden="true").fa.fa-check
+			span.checkbox__label
+				| !{label}

@@ -4,5 +4,40 @@
 
 $color-black: #000;
 $color-white: #fff;
+$color-border: #e5e5e5;
+$color-blue: #435993;
+$color-gradient-start: #ccb1f1;
+$color-gradient-stop: #435993;
+$color-checkbox-focus: #e9efff;
+$color-active: #1c1c1c;
+$color-intro-gradient: #3e3f73;
+$color-input-label: #c8c8c8;
+$color-scroll: #d9d9d9;
 
 // FONTS
+$font-default: "Roboto", "Arial", "Helvetica", sans-serif;
+$fz-large: 18px;
+$fz-base: 16px;
+$fz-small: 14px;
+$fz-h1: 48px;
+$fz-h2: 42px;
+$fz-h3: 32px;
+$fz-h4: 28px;
+$fz-h5: 20px;
+$fz-h6: 18px;
+$fz-section-title: 28px;
+
+// GRID
+$width-container: 768px;
+$gap: 10px;
+$width_xs_s: 550px;
+$width_xs: 768px;
+$width_xs_1: 720px;
+$width_md: 1024px;
+$width_lg: 1169px;
+$width_lgx: 1366px;
+
+// FIELDS
+
+$border-radius: 4px;
+$border-radius-checkbox: 2px;
